@@ -33,6 +33,7 @@ function inherits(Child, Parent) {
 }
 
 /*
+
 // 1.空函数 F
 function F() {}
 
@@ -44,7 +45,5 @@ Human.prototype = new F()
 
 // 4.将 Human 原型的构造函数修复为 Human(Human.prototype被重写,导致Human.prototype.constructor也一同被重写)
 Human.prototype.constructor = Human
-function fakeHuman() {}
-fakeHuman.prototype = Human.prototype
-Asian.prototype = new fakeHuman()
+
 */
