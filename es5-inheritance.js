@@ -21,7 +21,9 @@
 
 function Animal() {}
 
-Animal.prototype.move = function() {}
+Animal.prototype.move = function() {
+    console.log('I am moving...')
+}
 
 function Human(person) {
     Animal.call(this) //借用构造函数，继承了Animal且向父类传参
@@ -33,11 +35,13 @@ inherits(Human, Animal)
 
 // 注意，如果写成 Human.prototype = {} 形式，会直接打破原型链，继承会出错
 Human.prototype.species = 'Human'
-Human.prototype.toolManipulating = function() {}
+Human.prototype.toolManipulating = function() {
+    console.log('I can use tools!')
+}
 
 function Asian(person) {
     Human.call(this, person)
-    var city = person.city || 'Beijing'
+    this.city = person.city || 'Beijing'
 }
 
 inherits(Asian, Human)
