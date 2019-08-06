@@ -30,6 +30,37 @@ class Human extends Animal {
         this.birthday = person.birthday || '1970-01-01'
     }
 
+    species = 'Human'
+
+    toolManipulating() {
+        console.log('I can use tools!')
+    }
+}
+
+class Asian extends Human {
+    constructor(person) {
+        super(person)
+        this.city = person.city || 'Beijing'
+    }
+
+    skin = 'Yellow'
+}
+
+var jay = new Asian({ name: 'Jay', birthday: '1979-01-18', city: 'Taiwan' })
+/*
+class Animal {
+    move() {
+        console.log('I am moving...')
+    }
+}
+
+class Human extends Animal {
+    constructor(person) {
+        super()
+        this.name = person.name || 'Unnamed'
+        this.birthday = person.birthday || '1970-01-01'
+    }
+
     toolManipulating() {
         console.log('I can use tools!')
     }
@@ -46,3 +77,4 @@ class Asian extends Human {
 
 Asian.prototype.skin = 'Yellow'
 var jay = new Asian({ name: 'Jay', birthday: '1979-01-18', city: 'Taiwan' })
+*/
